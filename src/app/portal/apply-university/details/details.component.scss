@@ -1,0 +1,137 @@
+@import '_bf-breakpoints';
+
+.details {
+    font-family: poppins-medium;
+    position: relative;
+    padding-bottom: 50px;
+
+    h2 {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 30px;
+        color: #000000;
+        margin: 0;
+    }
+
+    h1 {
+        font-family: poppins-bold;
+        font-weight: bold;
+        font-size: 34px;
+        line-height: 51px;
+        color: #000000;
+        margin: 0;
+
+        @include breakpoint(max-sm) {
+            font-size: 22px;
+            line-height: 33px;
+        }
+    }
+
+    .line {
+        width: 100%;
+        height: 1px;
+        margin: 25px 0 15px;
+        background-color: #EBEBEB;
+    }
+
+    .icon {
+        height: 100%;
+        margin-right: 15px;
+    }
+
+    span {
+        display: block;
+        font-size: 14px;
+        line-height: 30px;
+        color: #000000;
+        margin: 0;
+
+        &.dark {
+            font-weight: bold;
+        }
+
+        &.light {
+            font-weight: 300;
+        }
+    }
+
+    p {
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 30px;
+        text-align: justify;
+        color: #777E90;
+    }
+
+    .column {
+        @include breakpoint(max-xl) {
+            width: 100% !important;
+        }
+        @include breakpoint(max-sm) {
+            width: auto !important;
+        }
+    }
+
+    .package-card {
+        margin-top: 25px;
+        border: 1px solid #EBEBEB;
+        border-radius: 8px;
+        padding: 25px;
+        position: relative;
+        max-height: 425px;
+
+        h1 {
+            margin: 0 0 20px;
+        }
+
+        h3 {
+            font-weight: bold;
+            font-size: 24px;
+            line-height: 30px;
+            color: #0085FF;
+            margin: 0 0 15px;
+        }
+
+        ul {
+            li {
+                align-items: center;
+                margin: 0;
+
+                i {
+                    height: fit-content;
+                    border-radius: 100%;
+                    font-size: 18px;
+                    color: #C9FFE5;
+                    background-color: #00B860;
+                    margin-right: 10px;
+                }
+            }
+
+            p {
+                text-align: left;
+                font-size: 14px;
+            }
+        }
+
+        .popular {
+            position: absolute;
+            top: 30px;
+            right: 25px;
+            padding: 6px;
+            background: #E5F3FF;
+            height: 30px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+
+            p {
+                font-size: 12px;
+                line-height: 30px;
+                color: #0085FF;
+                height: fit-content;
+            }
+
+        }
+    }
+}

@@ -1,0 +1,23 @@
+<section class="students" id="testimonials">
+    <div class="ui container">
+        <div class="heading-content">
+            <h1>What our students say</h1>
+            <h5>Our client’s review for making their dreams come true</h5>
+        </div>
+        <swiper [config]="config" (swiper)="onSwiper($event)" (slideChange)="onSlideChange()">
+            <ng-template swiperSlide *ngFor="let i of slides">
+                <div class="content">
+                    <h3>Andrew Roy</h3>
+                    <h6>Seoul National University</h6>
+                    <span>⭐⭐⭐⭐⭐</span>
+                    <p>
+                        Thanks to Study Bridge, my dreams come true. Now i am finally in Korea. Through Studybrige, our
+                        long dream to study and grow with good personality is finally became a dream in reality. Now my
+                        dream is to become great person with learning in this University, and eager to let this change
+                        to my friends and my acquaintances for having great dream to archieve
+                    </p>
+                </div>
+            </ng-template>
+        </swiper>
+    </div>
+</section>

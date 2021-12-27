@@ -1,0 +1,86 @@
+.congo {
+    position: fixed;
+    inset: 0;
+    background-color: rgba($color: #000000, $alpha: 0.3);
+    z-index: 1;
+
+    .congo-card {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #fff;
+        border-radius: 8px;
+        overflow: hidden;
+        max-width: 550px;
+        width: 100%;
+
+        .head {
+            background: #0B1635;
+            position: relative;
+            height: 140px;
+
+            img {
+                position: absolute;
+                top: 30px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+
+        .body {
+            text-align: center;
+            padding: 65px 40px 40px;
+
+            h1 {
+                font-weight: bold;
+                font-size: 34px;
+                line-height: 51px;
+                color: #000000;
+                margin-bottom: 10px;
+            }
+
+            p {
+                font-weight: normal;
+                font-size: 16px;
+                line-height: 30px;
+                color: #777E90;
+                margin-bottom: 32px;
+            }
+
+            .btn-cont {
+                button {
+                    cursor: pointer;
+                    width: 48%;
+                    background: #0085FF;
+                    border-radius: 8px;
+                    border: 1px solid #0085FF;
+                    font-size: 16px;
+                    line-height: 24px;
+                    display: flex;
+                    align-items: center;
+                    text-align: center;
+                    justify-content: center;
+                    color: #FFFFFF;
+                    height: 60px;
+                    transition: all 0.4s ease-in-out;
+
+                    &:hover {
+                        background: #0064c2;
+                    }
+
+                    &.light {
+                        background: #E5F3FF;
+                        color: #0085FF;
+                        border: 1px solid #E5F3FF;
+
+                        &:hover {
+                            background: #fff;
+                            border: 1px solid #0085FF;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

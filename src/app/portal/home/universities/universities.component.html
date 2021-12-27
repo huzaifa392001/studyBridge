@@ -1,0 +1,33 @@
+<section class="university" id="universities">
+    <div class="ui container">
+        <div class="heading-content">
+            <h1>Universities</h1>
+            <h5>Here is top 10 universities in South Korea</h5>
+        </div>
+
+        <swiper [config]="config" (swiper)="onSwiper($event)" (slideChange)="onSlideChange()">
+            <ng-template swiperSlide *ngFor="let uni of data; let i = index;">
+                <div class="card bf -reset -border -background -boxshadow">
+                    <div class="image">
+                        <img
+                            [src]="sanitizeImageUrl (uni.uni_image[0].image) ? env.uniImages + uni.uni_image[0].image : 'http://zipmar.timjohn.net/storage/product_images/no-image.jpg'">
+                        <!-- <img src="../../../../assets/images/{{i.image}}" alt=""> -->
+                    </div>
+
+                    <div class="content">
+                        <h3>{{uni.title}}</h3>
+                        <div class="d-flex justify-content-between"
+                            *ngFor="let info of uni.general_info; let in = index">
+                            <span class="light">
+                                {{info.heading}}
+                            </span>
+                            <span class="dark">
+                                {{info.value}}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </ng-template>
+        </swiper>
+    </div>
+</section>

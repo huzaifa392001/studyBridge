@@ -1,0 +1,26 @@
+<ngx-smart-modal #popupTwo identifier="popupTwo">
+    <section class="help-form">
+        <form [formGroup]="contact" (ngSubmit)="contactForm()">
+            <button class="close-btn" (click)="ngxSmartModalService.getModal('popupTwo').close()">
+                <i class="far fa-times-circle fa-2x"></i>
+            </button>
+            <h1>How can we help you?</h1>
+            <div class="input-cont">
+                <h2>Name</h2>
+                <input formControlName="name" type="text" placeholder="What is your name?">
+            </div>
+            <div class="input-cont">
+                <h2>Email</h2>
+                <input formControlName="email" type="email"
+                    placeholder="Please put your e-mail  address which we can contact to you">
+            </div>
+            <div class="input-cont">
+                <h2>Message</h2>
+                <textarea formControlName="message" placeholder="How can we help you?" name="" id="" rows="10"></textarea>
+            </div>
+            <button type="submit" class="ui primary basic button">Send</button>
+        </form>
+    </section>
+</ngx-smart-modal>
+
+<app-thanks></app-thanks>

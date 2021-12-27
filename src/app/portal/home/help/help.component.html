@@ -1,0 +1,20 @@
+<section class="help">
+    <div class="ui container">
+        <div class="ui two column dobuling grid">
+            <div class="column bf -reset -margin">
+                <figure>
+                    <img src="../../../../assets/images/get-help.png" alt="">
+                </figure>
+            </div>
+            <div class="column">
+                <div class="heading-content">
+                    <h1>Need more help?</h1>
+                    <h5>Search your preference and apply directly though here</h5>
+                    <button (click)="ngxSmartModalService.getModal('popupTwo').open()" class="ui primary basic button">Get contact</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<app-help-modal></app-help-modal>

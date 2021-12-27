@@ -1,0 +1,86 @@
+@import '_bf-breakpoints';
+
+.side-detail {
+    position: relative;
+    background: #FFFFFF;
+    border: 1px solid #EBEBEB;
+    box-sizing: border-box;
+    border-radius: 8px;
+    padding: 25px 30px 30px;
+    margin-bottom: 25px;
+
+    @include breakpoint(max-xl){
+        padding: 25px 20px 30px;
+    }
+
+    .m1 {
+        margin-top: 10px;
+    }
+
+    .d-flex {
+        img {
+            margin-right: 25px;
+
+            @include breakpoint(max-xl){
+                margin-right: 10px;
+            }
+        }
+    }
+
+    h1 {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 30px;
+        color: #000000;
+        margin: 0;
+
+        @include breakpoint(max-xl){
+            font-size: 16px;
+        }
+
+        @include breakpoint(max-lg){
+            font-size: 18px;
+        }
+
+    }
+
+    h2 {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 30px;
+        color: #000000;
+        margin: 0;
+
+        &.light {
+            color: #777E90;
+            font-weight: normal;
+        }
+
+        &.link {
+            text-decoration-line: underline;
+            color: #0085FF;
+        }
+    }
+
+    .line {
+        width: 100%;
+        margin: 20px 0;
+        height: 1px;
+        background-color: #EBEBEB;
+    }
+}
+
+* {
+    font-family: poppins-medium;
+}
+
+button {
+    width: 100%;
+    height: 60px;
+
+    &:hover {
+        border: 1px solid currentColor;
+    }
+}

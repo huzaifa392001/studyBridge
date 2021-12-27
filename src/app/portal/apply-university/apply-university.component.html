@@ -1,0 +1,14 @@
+<div class="university-section">
+    <div class="ui container">
+        <button (click)="back()" class="back-btn"><i class="fas fa-arrow-left"></i>Back</button>
+        <div class="ui grid">
+            <div class="sixteen wide column ten wide computer column">
+                <app-apply-details></app-apply-details>
+            </div>
+            <div class="sixteen wide column six wide computer column">
+                <app-side-bar (buttonClicked)="callPopup($event)"></app-side-bar>
+            </div>
+        </div>
+        <app-slider></app-slider>
+    </div>
+</div>

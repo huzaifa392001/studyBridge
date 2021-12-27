@@ -1,0 +1,151 @@
+<header class="sidebar">
+    <div class="ui top fixed menu">
+        <div class="ui container">
+            <div class="item bf -reset -padding -border" routerLink="/">
+                <h1>StudyBridge</h1>
+            </div>
+            <div class="right item bf -reset -border full-menu">
+                <a routerLink="/" routerLinkActive="active" class="item bf -reset -background-hover -padding-rl">How it
+                    works</a>
+                <a class="item bf -reset -background-hover -padding-rl">Why choose us</a>
+                <a class="item bf -reset -background-hover -padding-rl">Universities</a>
+                <a class="item bf -reset -background-hover -padding-rl">Testimonials</a>
+                <a class="item bf -reset -background-hover -padding-rl">FAQ</a>
+                <button class="ui primary basic button" routerLink="/search">Find a course</button>
+            </div>
+            <div class="right item bf -reset -border sidebar-btn">
+                <i (click)="sidemenu()" class="fas fa-bars fa-2x" [ngClass]="{'fa-times':active == true}"></i>
+            </div>
+        </div>
+    </div>
+    <div class="bg-shadow" [ngClass]="{'active':active == true}"></div>
+    <div class="side-menu" [ngClass]="{'active':active == true}">
+        <ul>
+            <li>
+                <a class="item bf -reset -background-hover -padding-rl">How it Works</a>
+            </li>
+            <li>
+                <a class="item bf -reset -background-hover -padding-rl">Universities</a>
+            </li>
+            <li>
+                <a class="item bf -reset -background-hover -padding-rl">Testimonials</a>
+            </li>
+            <li>
+                <a class="item bf -reset -background-hover -padding-rl">FAQ</a>
+            </li>
+        </ul>
+        <button class="ui primary basic button" routerLink="/search">Find a course</button>
+    </div>
+</header>
+<router-outlet></router-outlet>
+<footer>
+    <div class="ui container">
+        <div class="ui styled fluid accordion bf -reset -boxshadow -background">
+            <div class="accordian-cont ui accordian">
+                <div class="title d-flex justify-content-between">
+                    <h5>Study Bridge</h5>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="content bf -reset -padding-rl">
+                    <ul class="bf -reset -padding -margin">
+                        <li>
+                            <a class="item bf -reset -background-hover -padding">How it works</a>
+                        </li>
+                        <li>
+                            <a class="item bf -reset -background-hover -padding">Why choose us</a>
+                        </li>
+                        <li>
+                            <a class="item bf -reset -background-hover -padding">Universities</a>
+                        </li>
+                        <li>
+                            <a class="item bf -reset -background-hover -padding">Testimonials</a>
+                        </li>
+                        <li>
+                            <a class="item bf -reset -background-hover -padding">FAQ</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="accordian-cont ui accordian">
+                <div class="title d-flex justify-content-between">
+                    <h5>Customer Service</h5>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="content bf -reset -padding-rl">
+                    <ul class="bf -reset -padding -margin">
+                        <li>
+                            <p>P: 02-959-3694</p>
+                        </li>
+                        <li>
+                            <p>F: 02-959-3694</p>
+                        </li>
+                        <li>
+                            <p>E: hello@jobbridge.com</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="ui grid">
+            <div class="eight wide tablet six wide computer column">
+                <h1>StudyBridge</h1>
+                <p>
+                    StudyBridge Inc | CEO TOM | Vice CEO LUCAS
+                    No.513, 24, Kyungheedae-ro, Dongdaemun-gu, Seoul, Republic of Korea, Seoul, South Korea
+                    Business Registration Number: 854-26-00727
+
+                </p>
+            </div>
+            <div class="four wide column"></div>
+            <div class="three wide column">
+                <ul class="bf -reset -padding -margin">
+                    <h5>Study Bridge</h5>
+                    <li>
+                        <a class="item bf -reset -background-hover -padding">How it works</a>
+                    </li>
+                    <li>
+                        <a class="item bf -reset -background-hover -padding">Why choose us</a>
+                    </li>
+                    <li>
+                        <a class="item bf -reset -background-hover -padding">Universities</a>
+                    </li>
+                    <li>
+                        <a class="item bf -reset -background-hover -padding">Testimonials</a>
+                    </li>
+                    <li>
+                        <a class="item bf -reset -background-hover -padding">FAQ</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="three wide column">
+                <h5>Customer Service</h5>
+                <p>
+                    P: 02-959-3694
+                </p>
+                <p>
+                    F: 02-959-3694
+                </p>
+                <p>
+                    E: hello@jobbridge.com
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="ui divider"></div>
+    <div class="ui container">
+        <div class="d-flex justify-content-between">
+            <p>© 2020 Study Bridge ALL RIGHTS RESERVED</p>
+            <div class="icons">
+                <div class="icon-cont">
+                    <i class="fab fa-facebook-f"></i>
+                </div>
+                <div class="icon-cont">
+                    <i class="fab fa-instagram"></i>
+                </div>
+                <div class="icon-cont">
+                    <i class="fab fa-youtube"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

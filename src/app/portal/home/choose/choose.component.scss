@@ -1,0 +1,107 @@
+@import "_bf-breakpoints";
+
+.choose {
+    font-family: poppins-medium;
+    background: #0F1E46;
+    padding: 130px 0;
+
+    @include breakpoint(max-lg){
+        padding: 80px 0;
+    }
+
+    @include breakpoint(max-lg){
+        padding: 60px 0;
+    }
+
+    .heading-content {
+        width: 60%;
+
+        @include breakpoint(max-xl) {
+            width: 50%;
+        }
+
+        @include breakpoint(max-md) {
+            width: 75%;
+        }
+
+        @include breakpoint(max-sm) {
+            width: 100%;
+        }
+
+        h1 {
+            font-family: poppins-bold;
+            font-weight: bold;
+            font-size: 40px;
+            line-height: 60px;
+            color: #0085FF;
+            margin-bottom: 5px;
+
+            @include breakpoint(max-xl) {
+                font-size: 30px;
+                line-height: 45px;
+            }
+        }
+
+        h5 {
+            margin: 0;
+            font-weight: normal;
+            font-size: 18px;
+            line-height: 30px;
+            color: #FFFFFF;
+
+            @include breakpoint(max-xl) {
+                font-size: 16px;
+            }
+        }
+    }
+
+    .cards {
+        padding-top: 50px;
+
+        .card {
+            @include breakpoint(max-md) {
+                width: calc(100% - 2em);
+                height: 100%;
+                margin-top: 50px;
+
+                &:first-child{
+                    margin-top: 0;
+                }
+            }
+            .image {
+                background-color: transparent;
+
+                img {
+                    width: auto;
+                }
+            }
+
+            .content {
+                padding: 15px 0 0;
+
+                h3 {
+                    font-family: Poppins-bold;
+                    font-weight: bold;
+                    font-size: 18px;
+                    line-height: 27px;
+                    color: #fff;
+                    margin-bottom: 5px;
+
+                    @include breakpoint(max-lg) {
+
+                        font-size: 16px;
+                        line-height: 24px;
+                    }
+                }
+
+                p {
+                    font-weight: normal;
+                    font-size: 14px;
+                    line-height: 30px;
+                    color: #fff;
+                    margin: 0;
+                }
+            }
+        }
+    }
+}

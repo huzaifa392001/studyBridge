@@ -1,0 +1,70 @@
+@import '_bf-breakpoints';
+
+.help {
+
+    font-family: poppins-medium;
+    font-weight: 400;
+    padding: 130px 0;
+
+    @include breakpoint(max-lg) {
+        padding: 80px 0;
+    }
+
+    @include breakpoint(max-lg) {
+        padding: 60px 0;
+    }
+
+    .heading-content {
+        text-align: end;
+
+        h1 {
+            font-family: poppins-bold;
+            font-weight: bold;
+            font-size: 40px;
+            line-height: 60px;
+            color: #0085FF;
+            margin-bottom: 10px;
+
+            @include breakpoint(max-xl) {
+                font-size: 34px;
+                line-height: 51px;
+            }
+
+            @include breakpoint(max-sm) {
+                font-size: 22px;
+                line-height: 33px;
+            }
+        }
+
+        h5 {
+            margin: 0;
+            font-weight: normal;
+            font-size: 18px;
+            line-height: 30px;
+            color: #000;
+
+            @include breakpoint(max-xl) {
+                font-size: 16px;
+                line-height: 24px;
+            }
+
+            @include breakpoint(max-sm) {
+                line-height: 30px;
+            }
+        }
+
+        button {
+            margin-top: 20px;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 21px;
+            padding: 16px;
+
+            &:hover {
+                color: #fff !important;
+                background-color: #2185d0 !important;
+            }
+        }
+    }
+
+}

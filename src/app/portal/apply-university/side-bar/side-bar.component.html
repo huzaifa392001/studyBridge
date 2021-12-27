@@ -1,0 +1,40 @@
+<section class="side-detail">
+
+    <div class="content">
+        <h1>Please, fill in this form and we will contact you shortly</h1>
+        <h2 class="light">Once your application is completed, we will contact you and help you for the best </h2>
+        <div class="line"></div>
+        <h2>Service</h2>
+        <h2 class="light">Select service you want to purchase</h2>
+        <form [formGroup]="contact" (ngSubmit)="contactForm()">
+            <div class="d-flex justify-content-between btn-cont">
+                <div class="input-cont radio d-flex">
+                    <input type="radio" name="package" id="basic">
+                    <label for="basic">Basic</label>
+                </div>
+                <div class="input-cont radio d-flex">
+                    <input type="radio" name="package" id="pro">
+                    <label for="pro">Pro</label>
+                </div>
+            </div>
+            <div class="input-cont">
+                <h2>Name</h2>
+                <input formControlName="name" type="text" placeholder="Enter your name">
+            </div>
+            <div class="input-cont">
+                <h2>Email</h2>
+                <input formControlName="email" type="email" placeholder="Enter your email">
+            </div>
+            <div class="input-cont">
+                <h2>Phone Number</h2>
+                <input formControlName="phone" type="number" placeholder="Enter your phone number">
+            </div>
+            <button type="submit" class="ui primary button">Submit</button>
+        </form>
+
+    </div>
+
+
+</section>
+
+<app-congratulations-modal></app-congratulations-modal>

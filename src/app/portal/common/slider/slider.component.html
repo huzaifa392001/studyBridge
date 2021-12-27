@@ -1,0 +1,6 @@
+<h1>You may also like these courses</h1>
+<swiper [config]="config" (swiper)="onSwiper($event)" (slideChange)="onSlideChange()">
+    <ng-template swiperSlide *ngFor="let i of slides">
+        <app-card></app-card>
+    </ng-template>
+</swiper>

@@ -1,0 +1,80 @@
+@import '_bf-breakpoints';
+
+.dream {
+
+    font-family: poppins-medium;
+    font-weight: 400;
+    background: #0F1E46;
+    padding: 130px 0;
+
+    @include breakpoint(max-lg){
+        padding: 80px 0;
+    }
+
+    @include breakpoint(max-lg){
+        padding: 60px 0;
+    }
+
+    .heading-content {
+        width: 50%;
+        margin: 0 auto 50px;
+        text-align: center;
+
+        @include breakpoint(max-md){
+            width: 75%;
+        }
+
+        @include breakpoint(max-sm){
+            width: 100%;
+        }
+
+        h1 {
+            font-family: poppins-bold;
+            font-weight: bold;
+            font-size: 40px;
+            line-height: 60px;
+            color: #0085FF;
+            margin-bottom: 10px;
+
+            @include breakpoint(max-xl) {
+                font-size: 34px;
+                line-height: 51px;
+            }
+
+            @include breakpoint(max-sm) {
+                font-size: 22px;
+                line-height: 33px;
+            }
+        }
+
+        h5 {
+            margin: 0;
+            font-weight: normal;
+            font-size: 18px;
+            line-height: 30px;
+            color: #FFFFFF;
+
+            @include breakpoint(max-xl) {
+                font-size: 16px;
+                line-height: 24px;
+            }
+
+            @include breakpoint(max-sm) {
+                line-height: 30px;
+            }
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 16px;
+            width: 203px;
+            height: 55px;
+            transition: all 0.4s ease;
+            font-weight: bold;
+            font-size: 16px;
+            line-height: 19px;
+            color: #FFFFFF;
+        }
+    }
+
+}

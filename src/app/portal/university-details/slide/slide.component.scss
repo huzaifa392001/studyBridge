@@ -1,0 +1,44 @@
+swiper {
+    font-family: poppins-medium;
+    padding-bottom: 30px;
+    position: relative;
+
+    ::ng-deep {
+        [class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal"] {
+            bottom: 0;
+
+            [class="swiper-pagination-bullet"],
+            [class="swiper-pagination-bullet swiper-pagination-bullet-active"] {
+                width: 10px;
+                height: 10px;
+            }
+        }
+    }
+
+    figure {
+        border-radius: 10px;
+        overflow: hidden;
+        width: 100%;
+
+        image {
+            width: 100%;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        figcaption {
+            font-style: normal;
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 30px;
+            background: #C9FFE5;
+            border-radius: 4px;
+            color: #00B860;
+            padding: 5px 10px;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            height: fit-content;
+        }
+    }
+}

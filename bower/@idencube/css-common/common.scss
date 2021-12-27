@@ -1,0 +1,337 @@
+@mixin clearfix {
+
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+
+    &:after {
+        clear: both;
+    }
+
+    // For IE 6/7 (trigger hasLayout)
+    & {
+        zoom: 1;
+    }
+}
+
+@mixin align-xy($tPos, $lPos) {
+    top: $tPos;
+    left: $lPos;
+    transform: translate(-$lPos, -$tPos);
+}
+
+.bf {
+
+    /* Reset */
+    &.-reset {
+
+        /* Background Reset */
+        &.-background {
+            background: none !important;
+        }
+
+        /* Hover Background Reset */
+        &.-background-hover {
+            background: none !important;
+        }
+
+        /* Before Background Reset */
+        &.-background-before::before {
+            background: none !important;
+        }
+
+
+        /* Border Reset */
+        &.-border {
+            border: 0 !important;
+        }
+
+
+        /* Border Radius Reset */
+        &.-border-radius {
+            border-radius: 0 !important;
+        }
+
+
+        /* Box Shadow Reset */
+        &.-boxshadow {
+            box-shadow: none !important;
+        }
+
+
+        /* Padding Reset */
+        &.-padding {
+            padding: 0 !important;
+        }
+
+        &.-padding-top {
+            padding-top: 0 !important;
+        }
+
+        &.-padding-right {
+            padding-right: 0 !important;
+        }
+
+        &.-padding-bottom {
+            padding-bottom: 0 !important;
+        }
+
+        &.-padding-left {
+            padding-left: 0 !important;
+        }
+
+        &.-padding-tr {
+            padding-top: 0 !important;
+            padding-right: 0 !important;
+        }
+
+        &.-padding-tb {
+            padding-top: 0 !important;
+            padding-bottom: 0 !important;
+        }
+
+        &.-padding-tl {
+            padding-top: 0 !important;
+            padding-left: 0 !important;
+        }
+
+        &.-padding-trb {
+            padding-top: 0 !important;
+            padding-right: 0 !important;
+            padding-bottom: 0 !important;
+        }
+
+        &.-padding-trl {
+            padding-top: 0 !important;
+            padding-right: 0 !important;
+            padding-left: 0 !important;
+        }
+
+        &.-padding-tbl {
+            padding-top: 0 !important;
+            padding-bottom: 0 !important;
+            padding-left: 0 !important;
+        }
+
+        &.-padding-rl {
+            padding-right: 0 !important;
+            padding-left: 0 !important;
+        }
+
+
+        /* Margin Reset */
+        &.-margin {
+            margin: 0 !important;
+        }
+
+        &.-margin-top {
+            margin-top: 0 !important;
+        }
+
+        &.-margin-right {
+            margin-right: 0 !important;
+        }
+
+        &.-margin-bottom {
+            margin-bottom: 0 !important;
+        }
+
+        &.-margin-left {
+            margin-left: 0 !important;
+        }
+
+        &.-margin-center {
+            margin: 0 auto !important;
+        }
+    }
+
+    /* Text Align */
+    &.-text-align {
+        &.-left {
+            text-align: left !important;
+        }
+
+        &.-right {
+            text-align: right !important;
+        }
+
+        &.-center {
+            text-align: center !important;
+        }
+    }
+
+    /* Font  Size*/
+    &.-font-size {
+        &.-tiny {
+            font-size: 0.85714286rem;
+        }
+
+        &.-small {
+            font-size: 0.92857143rem;
+        }
+    }
+
+    /* Font */
+    &.-font {
+        &.-bold {
+            font-weight: bold !important;
+        }
+
+        &.-weight-100 {
+            font-weight: 100 !important;
+        }
+
+        &.-weight-300 {
+            font-weight: 300 !important;
+        }
+
+        &.-weight-400 {
+            font-weight: 400 !important;
+        }
+
+        &.-weight-500 {
+            font-weight: 500 !important;
+        }
+
+        &.-weight-600 {
+            font-weight: 600 !important;
+        }
+
+        &.-weight-700 {
+            font-weight: 700 !important;
+        }
+
+        &.-weight-800 {
+            font-weight: 800 !important;
+        }
+
+        &.-weight-900 {
+            font-weight: 900 !important;
+        }
+
+        &.-ltrsp--1 {
+            letter-spacing: -1px;
+        }
+    }
+
+    /* Hidden */
+    &.-hidden {
+        &.-xs-up {
+            display: none !important;
+        }
+
+        &.-xs-down {
+            @media (max-width: 575px) {
+                display: none !important;
+            }
+        }
+
+        &.-sm-up {
+            @media (min-width: 576px) {
+                display: none !important;
+            }
+        }
+
+        &.-sm-down {
+            @media (max-width: 767px) {
+                display: none !important;
+            }
+        }
+
+        &.-md-up {
+            @media (min-width: 768px) {
+                display: none !important;
+            }
+        }
+
+        &.-md-down {
+            @media (max-width: 991px) {
+                display: none !important;
+            }
+        }
+
+        &.-lg-up {
+            @media (min-width: 992px) {
+                display: none !important;
+            }
+        }
+
+        &.-lg-down {
+            @media (max-width: 1199px) {
+                display: none !important;
+            }
+        }
+
+        &.-xl-up {
+            @media (min-width: 1200px) {
+                display: none !important;
+            }
+        }
+    }
+
+    /* Sticky */
+    &.-sticky {
+        position: -webkit-sticky !important;
+        position: sticky !important;
+
+        &.-top0 {
+            top: 0 !important;
+        }
+    }
+
+    /* Float */
+    &.-float {
+        @include clearfix;
+
+        >.-fl-left {
+            float: left;
+        }
+
+        >.-fl-right {
+            float: right;
+        }
+    }
+
+    /**/
+    &.-visibility {
+        &.-hidden {
+            visibility: hidden !important;
+        }
+    }
+
+    /**/
+    &.-vertical-center {
+        @include align-xy(50%, 50%);
+
+        &.-pos-r {
+            position: relative;
+        }
+
+        &.-pos-a {
+            position: absolute;
+        }
+    }
+
+    /**/
+    &.-user-select-none {
+        -webkit-touch-callout: none;
+        /* iOS Safari */
+        -webkit-user-select: none;
+        /* Safari */
+        -khtml-user-select: none;
+        /* Konqueror HTML */
+        -moz-user-select: none;
+        /* Firefox */
+        -ms-user-select: none;
+        /* Internet Explorer/Edge */
+        user-select: none;
+        /* Non-prefixed version, currently supported by Chrome and Opera */
+    }
+
+    &.-disabled {
+        pointer-events: none !important;
+        opacity: .5 !important;
+    }
+}

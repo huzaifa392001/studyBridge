@@ -1,0 +1,36 @@
+/* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: poppins-bold;
+    src: url(assets/fonts/Poppins-Bold.ttf);
+}
+
+@font-face {
+    font-family: poppins-medium;
+    src: url(assets/fonts/Poppins-Medium.ttf);
+}
+
+@import 'swiper/scss';
+@import 'swiper/scss/navigation';
+@import 'swiper/scss/pagination';
+@import 'swiper/scss/controller';
+
+html {
+    scroll-behavior: smooth;
+}
+
+.d-flex {
+    display: flex !important;
+}
+
+.justify-content-between {
+    justify-content: space-between !important;
+}
+
+.ui.primary.button {
+
+
+    &:hover {
+        color: #2185d0 !important;
+        background-color: #fff !important;
+    }
+}

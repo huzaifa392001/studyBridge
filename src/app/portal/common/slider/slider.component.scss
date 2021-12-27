@@ -1,0 +1,46 @@
+@import '_bf-breakpoints';
+
+h1 {
+    font-family: poppins-bold;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 60px;
+    color: #0085FF;
+    margin-bottom: 25px;
+
+    @include breakpoint(max-md) {
+        font-size: 26px;
+        line-height: 39px;
+    }
+}
+
+swiper {
+    font-family: poppins-medium;
+    margin-bottom: 60px;
+
+    padding-bottom: 80px;
+
+    ::ng-deep {
+
+        [class="swiper-button-prev"],
+        [class="swiper-button-next"],
+        [class="swiper-button-prev swiper-button-disabled"],
+        [class="swiper-button-next swiper-button-disabled"] {
+            top: unset;
+            bottom: 0;
+            z-index: 11111;
+            color: #0085FF;
+
+            &.disabled {
+                opacity: 0.35;
+            }
+
+            &[class="swiper-button-prev"],
+            &[class="swiper-button-prev swiper-button-disabled"] {
+                left: unset;
+                right: 50px;
+            }
+        }
+    }
+}

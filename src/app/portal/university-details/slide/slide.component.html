@@ -1,0 +1,8 @@
+<swiper [config]="config" (swiper)="onSwiper($event)" (slideChange)="onSlideChange()">
+    <ng-template swiperSlide *ngFor="let i of slides">
+        <figure class="bf -reset -margin">
+            <img src="../../../../assets/images/university-image.png" alt="">
+            <figcaption>Open Now</figcaption>
+        </figure>
+    </ng-template>
+</swiper>
