@@ -9,20 +9,42 @@
             <ng-template swiperSlide *ngFor="let uni of data; let i = index;">
                 <div class="card bf -reset -border -background -boxshadow">
                     <div class="image">
-                        <img
-                            [src]="sanitizeImageUrl (uni.uni_image[0].image) ? env.uniImages + uni.uni_image[0].image : 'http://zipmar.timjohn.net/storage/product_images/no-image.jpg'">
-                        <!-- <img src="../../../../assets/images/{{i.image}}" alt=""> -->
+                        <!-- <img [src]="sanitizeImageUrl (uni.uni_image[0].image) ? env.uniImages + uni.uni_image[0].image : 'http://zipmar.timjohn.net/storage/product_images/no-image.jpg'"> -->
+                        <img src="../../../../assets/images/seoul.png" alt="">
                     </div>
-
                     <div class="content">
-                        <h3>{{uni.title}}</h3>
-                        <div class="d-flex justify-content-between"
+                        <h3>{{uni.university_name}}</h3>
+                        <!-- <div class="d-flex justify-content-between"
                             *ngFor="let info of uni.general_info; let in = index">
                             <span class="light">
                                 {{info.heading}}
                             </span>
                             <span class="dark">
                                 {{info.value}}
+                            </span>
+                        </div> -->
+                        <div class="d-flex justify-content-between">
+                            <span class="light">
+                                Students
+                            </span>
+                            <span class="dark">
+                                45,000
+                            </span>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <span class="light">
+                                Location
+                            </span>
+                            <span class="dark">
+                                {{uni.seoul}}
+                            </span>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <span class="light">
+                                Faculties
+                            </span>
+                            <span class="dark">
+                                502
                             </span>
                         </div>
                     </div>

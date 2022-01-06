@@ -13,6 +13,6 @@ export class homeResolver implements Resolve<any> {
   ) { }
 
   resolve(route: ActivatedRouteSnapshot): Observable<any> | Promise<any> | any {
-    return this.httpservice.get('universities');
+    return this.httpservice.get('get-unis');
   }
 }

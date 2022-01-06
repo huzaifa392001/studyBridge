@@ -23,9 +23,9 @@ export class SearchMainComponent implements OnInit {
 
     ngOnInit(): void {
         this.form();
-        this.httpservice.getLive("http://www.career.go.kr/cnet/openapi/getOpenApi?apiKey=34a0fd76c36b12b0b18f14f9c3f22b54&svcType=api&svcCode=MAJOR&contentType=json&gubun=univ_list&univSe=univ").subscribe((res: any) => {
-            console.log(res);
-        })
+        // this.httpservice.getLive("http://www.career.go.kr/cnet/openapi/getOpenApi?apiKey=34a0fd76c36b12b0b18f14f9c3f22b54&svcType=api&svcCode=MAJOR&contentType=json&gubun=univ_list&univSe=univ").subscribe((res: any) => {
+        //     console.log(res);
+        // })
     }
 
     form() {
@@ -40,7 +40,7 @@ export class SearchMainComponent implements OnInit {
         if (this.searchForm.valid) {
             this.httpservice.post("search-uni-courses", this.searchForm.value).subscribe((res: any) => {
                 this.courses = true;
-                if(res.value > 0){
+                if (res.value > 0) {
                     this.courses = res.courses;
                     this.suggestion = res.suggestion;
                     console.log(this.courses);
