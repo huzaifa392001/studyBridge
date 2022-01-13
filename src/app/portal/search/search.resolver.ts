@@ -13,6 +13,15 @@ export class searchResolver implements Resolve<any> {
   ) { }
 
   resolve(route: ActivatedRouteSnapshot): Observable<any> | Promise<any> | any {
-    return this.httpservice.get('cities');
+    const cities = new Promise((resolve,reject)=>{
+        this.httpservice.get("cities").subscribe(res => resolve(res));
+    })
+
+    const depart = new Promise((resolve,reject)=>{
+        this.httpservice.get("all-departs").subscribe(res => resolve(res));
+    })
+
+
+    return Promise.all([cities, depart]);
   }
 }

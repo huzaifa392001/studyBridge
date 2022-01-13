@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, ElementRef, Input, OnInit, QueryList, ViewChildren } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpService } from 'src/app/service/http.service';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { environment } from '../../../../environments/environment';
@@ -13,11 +13,12 @@ declare var $: any
 })
 export class SearchMainComponent implements OnInit, AfterViewInit {
 
-    @Input() data: any ;
+    @Input() data: any;
     courses: any = false;
     searchForm!: FormGroup;
     env = environment;
     suggestion: any;
+    loader: any = false;
 
     @ViewChildren('dropdown') elDropdown!: QueryList<ElementRef>;
     constructor(
@@ -28,6 +29,10 @@ export class SearchMainComponent implements OnInit, AfterViewInit {
 
     ngOnInit(): void {
         this.form();
+        const mapped = Object.keys(this.data[1].departs).map(key => ({value: this.data[1].departs[key]}));
+
+        console.log(mapped);
+        this.data[1].departs = mapped;
         console.log(this.data);
     }
 
@@ -43,7 +48,7 @@ export class SearchMainComponent implements OnInit, AfterViewInit {
 
     form() {
         this.searchForm = this.fb.group({
-            c: [''],
+            c: ['', Validators.required],
             d: [''],
             lang: [''],
         });
@@ -51,13 +56,16 @@ export class SearchMainComponent implements OnInit, AfterViewInit {
 
     search() {
         if (this.searchForm.valid) {
+            this.loader = true;
             this.httpservice.post("search-courses", this.searchForm.value).subscribe((res: any) => {
                 this.courses = true;
                 console.log(res);
                 if (res.courses.length > 0) {
-                    this.courses = res.courses;
+                    this.courses = res;
                     console.log(this.courses);
+                    this.loader = false;
                 }
+                this.loader = false;
             })
         }
     }

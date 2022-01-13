@@ -17,7 +17,7 @@
                         <h6 for="">City</h6>
                         <select class="ui fluid search dropdown" #dropdown formControlName="c">
                             <option value="">Please select the city</option>
-                            <option *ngFor="let cityVal of data.cities" [ngValue]="cityVal.city">
+                            <option *ngFor="let cityVal of data[0].cities" [ngValue]="cityVal.city">
                                 {{ cityVal.city }}
                             </option>
                         </select>
@@ -29,8 +29,8 @@
                         <h6 for="">Major</h6>
                         <select class="ui fluid search dropdown" #dropdown formControlName="d">
                             <option value="">Please select the major</option>
-                            <option *ngFor="let cityVal of data.cities" [ngValue]="cityVal.city">
-                                {{ cityVal.city }}
+                            <option *ngFor="let depart of data[1].departs; let i = index" [ngValue]="depart.value">
+                                {{ depart.value }}
                             </option>
                         </select>
                     </div>
@@ -40,16 +40,14 @@
                     <div class="input-cont">
                         <h6 for="">Language</h6>
                         <select placeholder="Please select the language" name="" id="">
-                            <option value="">Please select the language</option>
-                            <option value="">Please select the language</option>
-                            <option value="">Please select the language</option>
+                            <option value="">English</option>
                         </select>
                     </div>
                 </div>
                 <div
                     class="sixteen wide mobile column eight wide tablet column three wide computer column bf -reset -padding-tb">
                     <div class="btn-cont">
-                        <button type="submit" class="ui primary button">Search</button>
+                        <button [disabled]="!searchForm.valid" type="submit" class="ui primary button" [ngClass]="{'loading': loader}">Search</button>
                     </div>
                 </div>
             </div>
@@ -62,11 +60,11 @@
         <h5>Find University</h5>
         <img src="../../../../assets/images/018.png" alt="">
     </div>
-    <div class="results" *ngIf="courses.length > 0">
+    <div class="results" *ngIf="courses.count_courses > 0">
         <div class="ui container">
-            <h1>{{courses.length}} courses found</h1>
+            <h1>{{courses.count_courses}} courses found</h1>
             <div class="ui three doubling cards">
-                <ng-container *ngFor="let i of courses; let in = index;">
+                <ng-container *ngFor="let i of courses.courses; let in = index;">
                     <div routerLink="/university/{{i.id}}" class="card">
                         <div class="image">
                             <!-- <img [src]="sanitizeImageUrl (courses.course_image[0].image) ? env.courseImage + courses.course_image[0].image : 'http://zipmar.timjohn.net/storage/product_images/no-image.jpg'"> -->
@@ -88,13 +86,19 @@
                     </div>
                 </ng-container>
             </div>
-            <div class="btn-cont">
+            <!-- <div class="btn-cont">
                 <button class="more ui primary basic button">Load More</button>
-            </div>
+            </div> -->
         </div>
     </div>
-    <div class="no-result" *ngIf="courses ">
+    <div class="no-result" *ngIf="courses.count_courses == 0">
         <h5>No Result Found</h5>
         <img src="../../../../assets/images/download.jfif" alt="">
     </div>
 </section>
+<!-- <div *ngIf="loader" class="ui segment bf -reset -border -margin">
+    <div class="ui active dimmer ">
+        <div class="ui large text loader">Loading</div>
+    </div>
+    <p></p>
+</div> -->
