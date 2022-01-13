@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -8,14 +8,16 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class SearchComponent implements OnInit {
 
-    // course: any = this.route.snapshot.data['homeresolver'].unis;
+    cities: any = this.route.snapshot.data['searchresolver'];
+
+    @Output() data: any;
 
     constructor(
         private route: ActivatedRoute,
     ) { }
 
     ngOnInit(): void {
-        // console.log(this.course);
+        console.log(this.cities);
 
     }
 

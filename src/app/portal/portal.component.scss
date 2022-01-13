@@ -24,7 +24,7 @@ header {
                 cursor: pointer;
                 font-family: poppins-bold;
 
-                @include breakpoint(max-sm){
+                @include breakpoint(max-sm) {
                     padding-left: 10px;
                 }
             }
@@ -248,7 +248,7 @@ footer {
 
     }
 
-    .accordian-cont{
+    .accordian-cont {
         display: none;
     }
 
@@ -262,14 +262,17 @@ footer {
         .accordian-cont {
             display: block;
             margin-top: 20px;
-            border-bottom: 1px solid rgba($color: #fff, $alpha: 0.2);;
+            border-bottom: 1px solid rgba($color: #fff, $alpha: 0.2);
+            ;
 
-            &:first-child{
+            &:first-child {
                 margin-top: 0;
             }
-            .title{
+
+            .title {
                 padding: 0;
             }
+
             h5 {
 
                 font-weight: bold;
@@ -277,12 +280,13 @@ footer {
                 line-height: 21px;
                 color: #FFFFFF;
             }
-            i{
+
+            i {
                 color: #fff;
             }
         }
 
-        .ui.grid{
+        .ui.grid {
             margin-top: 50px;
         }
     }

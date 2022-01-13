@@ -9,16 +9,17 @@
         </div>
     </div>
     <div class="search-box">
-        <form action="" [formGroup]="searchForm" (ngSubmit)="search()">
+        <form action="" [formGroup]="searchForm" (ngSubmit)="search()" class="ui large form">
             <div class="ui grid container">
                 <div
                     class="sixteen wide mobile column eight wide tablet column four wide computer column bf -reset -padding-tb">
                     <div class="input-cont">
                         <h6 for="">City</h6>
-                        <select placeholder="Please select the city" name="" id="">
-                            <option value="">Seoul</option>
-                            <option value="">Seoul</option>
-                            <option value="">Seoul</option>
+                        <select class="ui fluid search dropdown" #dropdown formControlName="c">
+                            <option value="">Please select the city</option>
+                            <option *ngFor="let cityVal of data.cities" [ngValue]="cityVal.city">
+                                {{ cityVal.city }}
+                            </option>
                         </select>
                     </div>
                 </div>
@@ -26,10 +27,11 @@
                     class="sixteen wide mobile column eight wide tablet column four wide computer column bf -reset -padding-tb">
                     <div class="input-cont">
                         <h6 for="">Major</h6>
-                        <select placeholder="Please select the major" name="" id="">
+                        <select class="ui fluid search dropdown" #dropdown formControlName="d">
                             <option value="">Please select the major</option>
-                            <option value="">Please select the major</option>
-                            <option value="">Please select the major</option>
+                            <option *ngFor="let cityVal of data.cities" [ngValue]="cityVal.city">
+                                {{ cityVal.city }}
+                            </option>
                         </select>
                     </div>
                 </div>
@@ -54,12 +56,13 @@
         </form>
     </div>
 </section>
+
 <section class="result">
     <div class="empty-result" *ngIf="!courses">
         <h5>Find University</h5>
         <img src="../../../../assets/images/018.png" alt="">
     </div>
-    <div class="results" *ngIf="courses.value">
+    <div class="results" *ngIf="courses.length > 0">
         <div class="ui container">
             <h1>{{courses.length}} courses found</h1>
             <div class="ui three doubling cards">
@@ -70,12 +73,12 @@
                             <img src="../../../../assets/images/search-card.png">
                         </div>
                         <div class="content">
-                            <h4>{{i.heading}}</h4>
+                            <h4>{{i.name}}</h4>
                             <h6>{{i.uni.title}}</h6>
                             <div class="line"></div>
                             <div class="d-flex justify-content-between">
                                 <span>Price</span>
-                                <span class="price">{{i.price}}</span>
+                                <span class="price">4.3 mln KRW / semester</span>
                             </div>
                             <div class="d-flex justify-content-between">
                                 <span>Application period</span>
@@ -90,7 +93,7 @@
             </div>
         </div>
     </div>
-    <div class="no-result" *ngIf="courses && courses > 0">
+    <div class="no-result" *ngIf="courses ">
         <h5>No Result Found</h5>
         <img src="../../../../assets/images/download.jfif" alt="">
     </div>

@@ -13,6 +13,6 @@ export class searchResolver implements Resolve<any> {
   ) { }
 
   resolve(route: ActivatedRouteSnapshot): Observable<any> | Promise<any> | any {
-    // return this.httpservice.get('search-uni-courses');
+    return this.httpservice.get('cities');
   }
 }
