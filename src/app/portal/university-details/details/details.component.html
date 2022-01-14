@@ -32,6 +32,26 @@
     <div class="line"></div>
 
     <div class="content">
+        <h2>Field of Study</h2>
+        <ul class="bf -reset -margin -padding">
+            <ng-container *ngFor="let i of data.depart[0].field_of_study">
+                <li>
+                    <p>{{i}}</p>
+                </li>
+            </ng-container>
+        </ul>
+    </div>
+
+    <div class="line"></div>
+
+    <div class="content">
+        <h2>Details</h2>
+        <p>{{data.depart[0].uni.detail_description}}</p>
+    </div>
+
+    <div class="line"></div>
+
+    <div class="content">
         <h2>Introduction</h2>
         <p>
             An autonomous and convergent education system to strengthen creativity and personality education. It
