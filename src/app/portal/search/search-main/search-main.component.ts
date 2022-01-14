@@ -57,14 +57,12 @@ export class SearchMainComponent implements OnInit, AfterViewInit {
     search() {
         if (this.searchForm.valid) {
             this.loader = true;
+            this.courses = true;
             this.httpservice.post("search-courses", this.searchForm.value).subscribe((res: any) => {
-                this.courses = true;
                 console.log(res);
-                if (res.courses.length > 0) {
-                    this.courses = res;
-                    console.log(this.courses);
-                    this.loader = false;
-                }
+                this.courses = res;
+                console.log(this.courses);
+                this.loader = false;
                 this.loader = false;
             })
         }

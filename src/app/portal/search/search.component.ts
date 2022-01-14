@@ -10,7 +10,7 @@ export class SearchComponent implements OnInit {
 
     cities: any = this.route.snapshot.data['searchresolver'];
 
-    @Output() data: any;
+    // @Output() data: any;
 
     constructor(
         private route: ActivatedRoute,

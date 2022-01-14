@@ -12,7 +12,7 @@ export class universityResolver implements Resolve<any> {
     ) { }
 
     resolve(route: ActivatedRouteSnapshot): Observable<any> | Promise<any> | any {
-        let id: any;
-        // return this.httpservice.get('course/', id);
+        const id = route.params['id'];
+        return this.httpservice.get('uni-course/'+id);
     }
 }

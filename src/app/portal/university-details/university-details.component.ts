@@ -11,6 +11,8 @@ import { environment } from '../../../environments/environment';
 })
 export class UniversityDetailsComponent implements OnInit {
 
+    uniDetails: any = this.route.snapshot.data['universityresolver'];
+
     constructor(
         private location: Location,
         private router: Router,
@@ -18,6 +20,8 @@ export class UniversityDetailsComponent implements OnInit {
     ) { }
 
     ngOnInit(): void {
+        console.log(this.uniDetails);
+
     }
 
     back() {

@@ -47,7 +47,8 @@
                 <div
                     class="sixteen wide mobile column eight wide tablet column three wide computer column bf -reset -padding-tb">
                     <div class="btn-cont">
-                        <button [disabled]="!searchForm.valid" type="submit" class="ui primary button" [ngClass]="{'loading': loader}">Search</button>
+                        <button [disabled]="!searchForm.valid" type="submit" class="ui primary button"
+                            [ngClass]="{'loading': loader}">Search</button>
                     </div>
                 </div>
             </div>
@@ -91,7 +92,7 @@
             </div> -->
         </div>
     </div>
-    <div class="no-result" *ngIf="courses.count_courses == 0">
+    <div class="no-result" *ngIf="courses.count_courses === 0">
         <h5>No Result Found</h5>
         <img src="../../../../assets/images/download.jfif" alt="">
     </div>

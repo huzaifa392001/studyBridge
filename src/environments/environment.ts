@@ -3,7 +3,7 @@
 // The list of file replacements can be found in `angular.json`.
 
 const apiVersion = "api/";
-const apiUrl = "http://study.nimbles.io/";
+const apiUrl = "https://nimbles.io/public/";
 const uni = 'storage/images/uni/';
 const course = 'storage/images/course/';
 export const environment = {

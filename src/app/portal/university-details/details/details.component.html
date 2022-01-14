@@ -1,7 +1,7 @@
 <section class="details">
     <div class="head">
-        <h2>Seoul National University</h2>
-        <h1>Bachelor of Science In Business Administration</h1>
+        <h2>{{data.depart[0].uni.title}}</h2>
+        <h1>{{data.depart[0].name}}</h1>
     </div>
     <div class="line"></div>
     <div class="ui dobuling three column grid">
@@ -14,6 +14,19 @@
                 </div>
             </div>
         </div>
+    </div>
+
+    <div class="line"></div>
+
+    <div class="content">
+        <h2>Degree</h2>
+        <ul class="bf -reset -margin -padding">
+            <ng-container *ngFor="let i of data.depart[0].uni.degree">
+                <li>
+                    <p>{{i.degree_name}}</p>
+                </li>
+            </ng-container>
+        </ul>
     </div>
 
     <div class="line"></div>
@@ -61,9 +74,12 @@
         <h2>Eligability and requirements</h2>
         <p>
             – Person who has obtained a bachelor's degree or who is expected to obtain it. <br>
-            – English grades: TEPS (327 points/based on NewTeps) or higher, TOEFL IBT–86 points or higher (exempt if you graduate from a foreign English-speaking university)<br>
-            – The format of reading sociology-related texts in English and describing answers (answer can be both English and Korean) – impossible to bring in advance, and failure without exception if missed.<br>
-            – The scores of the major written exam are used as reference materials for interviews and oral examinations.<br>
+            – English grades: TEPS (327 points/based on NewTeps) or higher, TOEFL IBT–86 points or higher (exempt if you
+            graduate from a foreign English-speaking university)<br>
+            – The format of reading sociology-related texts in English and describing answers (answer can be both
+            English and Korean) – impossible to bring in advance, and failure without exception if missed.<br>
+            – The scores of the major written exam are used as reference materials for interviews and oral
+            examinations.<br>
             – Level 2, interview and oral exam.
         </p>
     </div>

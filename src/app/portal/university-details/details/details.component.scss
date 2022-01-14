@@ -76,6 +76,10 @@
         }
     }
 
+    ul{
+        list-style: none;
+    }
+
     .column {
         .column {
             @include breakpoint(max-sm) {
